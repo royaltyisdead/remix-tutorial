@@ -14,6 +14,7 @@ export const loader: LoaderFunction = async ({
 export default function PostSlug() {
     const post = useLoaderData();
     return (
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      <div className="mt-6 prose prose-indigo prose-lg text-gray-500 mx-auto" dangerouslySetInnerHTML={{ __html: post.html }}>
+      </div>
     );
   }

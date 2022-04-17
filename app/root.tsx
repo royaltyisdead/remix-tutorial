@@ -4,13 +4,19 @@ import {
   Meta,
   Outlet,
   Scripts,
-  ScrollRestoration
+  ScrollRestoration,
+  Link
 } from "remix";
 import type { MetaFunction } from "remix";
+import styles from "./styles/app.css"
 
 export const meta: MetaFunction = () => {
-  return { title: "New Remix App" };
+  return { title: "Remix demo - Jack Ridgway" };
 };
+
+export function links() {
+  return [{ rel: "stylesheet", href: styles }]
+}
 
 export default function App() {
   return (
@@ -22,6 +28,8 @@ export default function App() {
         <Links />
       </head>
       <body>
+        <Link to="/posts">Posts</Link>
+        <Link to="/admin">Admin</Link>
         <Outlet />
         <ScrollRestoration />
         <Scripts />
